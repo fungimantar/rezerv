@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+<!--    <link rel="stylesheet" href="static/fonts/material-icon/css/material-design-iconic-font.min.css">-->
+
+
+    <!-- Main css<link rel="stylesheet" href="static/style.css"> -->
+
+    <!-- CSS only -->
+<style>
+
+.column-left2  {
+    float: left;
+    padding:10px;
+
+    }
+.column-right2 {
+    float: left;
+    margin-left:200px;
+    }
+
+#reset {
+  background: #f8f8f8;
+  color: #999;
+  margin-right: 8px; }
+#reset:hover {
+    background: #ff6801;
+    color: #fff; }
+
+#submit {
+  background: #ff6801;
+  color: #fff; }
+#submit:hover {
+    background-color: #cd5300; }
+.submit {
+  width: 140px;
+  height: 40px;
+  display: inline-block;
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 13px;
+  padding: 10px;
+  border: none;
+  cursor: pointer; }
+
+.form-submit {
+  text-align: right;
+  padding-top: 27px; }
+
+display-flex, .signup-content, .form-row, .form-radio, .select-icon, .select-icon i {
+  display: flex;
+  display: -webkit-flex; }
+
+
+h2 {
+  line-height: 1.66;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  color: #222;
+  font-family: 'Montserrat';
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 32px; }
+
+.clear {
+  clear: both; }
+
+body {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #222;
+  font-weight: 400;
+  background: #282828;
+  padding: 90px 0; }
+
+.container {
+  width: 1400px;
+  position: relative;
+  margin: 0 auto;
+  background: #fff; }
+
+
+
+
+
+.register-form {
+  padding: 50px 100px 50px 70px; }
+
+.form-row {
+  margin: 0 -15px; }
+.form-row .form-group {
+width: 50%;
+padding: 0 15px; }
+
+.form-group {
+  margin-bottom: 23px;
+  position: relative; }
+
+input, select {
+  display: block;
+  width: 100%;
+  border: 1px solid #ebebeb;
+  padding: 11px 20px;
+  box-sizing: border-box;
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-size: 13px; }
+  input:focus, select:focus {
+    border: 1px solid #ff6801; }
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Montserrat';
+  margin-bottom: 2px;
+  display: block; }
+
+.form-radio {
+  margin-bottom: 18px; }
+  .form-radio input {
+    width: auto;
+    display: inline-block; }
+
+.radio-label {
+  padding-right: 72px; }
+  .form-radio-item {
+  position: relative;
+  margin-right: 45px; }
+
+.form-radio-item label {
+    font-weight: 500;
+    font-size: 13px;
+    padding-left: 25px;
+    position: relative;
+    z-index: 9;
+    display: block;
+    cursor: pointer; }
+h2 .colorTwo {color:red;}
+</style>
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="container">
+            <div class="signup-content" >
+
+                <form method="POST" class="register-form" id="register-form">
+
+                    <h2> <span class="colorTwo">{{f}}</span> tarihi saat <span class="colorTwo">{{btnn}}</span> icin hasta kayit formu</h2>
+
+                    <div class = "column-left2" >
+                        <div class="signup-forml">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="isim">Isim :</label>
+                                    <input type="text" name="isim" id="isim" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="soyad">Soy  Isim :</label>
+                                    <input type="text" name="soyad" id="soyad"  />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dogum">Dogum tarihi :</label>
+                                <input type="date" name="dogum" id="dogum">
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" name="email" id="email" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "column-right2"  >
+                        <div class="signup-forml ">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="tc">TC No :</label>
+                                    <input type="number" name="tc" id="tc"  />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefon">Telefon :</label>
+                                <input type="number" name="telefon" id="telefon" />
+                            </div>
+                            <div class="form-submit">
+                                 <input type="submit" value="Iptal" class="submit" name="submit" id="iptal" />
+                                 <input type="submit" value="Tümünü Sifirla" class="submit" name="reset" id="reset" />
+                                 <input type="submit" value="Kaydet" class="submit" name="submit" id="submit" />
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<script src="../static/stop_server.js"></script>
+
+</body>
+</html>

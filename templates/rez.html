@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background: #222831;
+  background-image: url({{ url_for('static', filename='resim.jpg') }});
+}
+.main{
+min-height:500px;
+}
+.row{
+    width:90%;
+    height:90%;
+    margin-left:5%;
+    margin-right:5%;
+}
+/* Create four equal columns that floats next to each other */
+.column {
+
+  float: left;
+  width: 13%;
+
+  padding: 0.5%;
+  margin-top:0.5%;
+  margin-bottom:1%;
+
+  border-style: groove;
+  border-radius: 1%;
+  opacity:.8;
+
+
+}
+.column + .column {
+    margin-left: 1%;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+input{
+    width:100%;
+    margin-top:7%;
+     height:50px;
+}
+.iletisim{
+  margin-top:0.05%;
+  margin-left:5%;
+  margin-right:5%;
+  display: inline-block;
+}
+.harita{
+  float:left;
+
+
+}
+.bilgiler{
+   color:white;
+   margin-left:30px;
+   float:left;
+}
+
+input:hover:not([value="-"]){
+background:LightBlue;
+}
+input:hover{
+background:red;
+}
+
+.x{
+  float:left;
+  width: 3.5%;
+  margin-left:-4%;
+  margin-top:10%;
+  height:120px;
+}
+.xx{
+  float:right;
+  width: 3.5%;
+  margin-right:-2%;
+  height:120px;
+  margin-top:10%;
+}
+.dd{
+margin-top:10px;
+}
+</style>
+</head>
+<body>
+
+
+    <div class="main">
+
+      <div class="row">
+        <form method="post">
+        <input type="submit" class="x" name="submit" value="<">
+        <input type="submit" class="xx" name="submit" value=">">
+        </form>
+        {% for i in gün %}
+          <div class="column" style="background-color:white;">
+            <h2>{{date[i]}}</h2>
+            <h4>{{günler[i]}}</h4>
+            {% if günler[i]=="Pazar" %}
+                    <input type="hidden" value="{{date[i]}}" name="foo">
+                    <input type="submit" name="submit" value="-">
+                    <input type="submit" name="submit" value="-">
+                    <input type="submit" name="submit" value="-">
+                    <input type="submit" name="submit" value="-">
+                    <input type="submit" name="submit" value="-">
+                    <input type="submit" name="submit" value="-">
+            {% elif günler[i]=="Cumartesi" %}
+                <form class="form" method="post">
+                  <input type="hidden" value="{{date[i]}}" name="foo">
+                  {% if (date[i]).strftime('%Y-%m-%d')+"10:00" in rez %}
+                       <input type="submit" name="submit" value="-">
+                    {% else %}
+                       <input type="submit" name="submit" value="10:00">
+                    {% endif %}
+                  {% if (date[i]).strftime('%Y-%m-%d')+"11:00" in rez %}
+                       <input type="submit" name="submit" value="-">
+                    {% else %}
+                       <input type="submit" name="submit" value="11:00">
+                    {% endif %}
+                   {% if (date[i]).strftime('%Y-%m-%d')+"12:00" in rez %}
+                       <input type="submit" name="submit" value="-">
+                    {% else %}
+                       <input type="submit" name="submit" value="12:00">
+                    {% endif %}
+                </form>
+                  <input type="submit" name="submit" value="-">
+                  <input type="submit" name="submit" value="-">
+                  <input type="submit" name="submit" value="-">
+            {% else %}
+
+                <form class="form" method="post">
+                  <input type="hidden" value="{{date[i]}}" name="foo">
+                    {% if (date[i]).strftime('%Y-%m-%d')+"10:00" in rez %}
+                       <input type="submit" name="submit" value="-">
+                    {% else %}
+                       <input type="submit" name="submit" value="10:00">
+                    {% endif %}
+                   {% if (date[i]).strftime('%Y-%m-%d')+"11:00" in rez %}
+                       <input type="submit" name="submit" value="-">
+                    {% else %}
+                       <input type="submit" name="submit" value="11:00">
+                    {% endif %}
+                   {% if (date[i]).strftime('%Y-%m-%d')+"12:00" in rez %}
+                       <input type="submit" name="submit" value="-">
+                    {% else %}
+                       <input type="submit" name="submit" value="12:00">
+                    {% endif %}
+                   {% if (date[i]).strftime('%Y-%m-%d')+"13:00" in rez %}
+                       <input type="submit" name="submit" value="-">
+                    {% else %}
+                       <input type="submit" name="submit" value="13:00">
+                    {% endif %}
+                   {% if (date[i]).strftime('%Y-%m-%d')+"14:00" in rez %}
+                       <input type="submit" name="submit" value="-">
+                    {% else %}
+                       <input type="submit" name="submit" value="14:00">
+                    {% endif %}
+                   {% if (date[i]).strftime('%Y-%m-%d')+"15:00" in rez %}
+                       <input type="submit" name="submit" value="-">
+                    {% else %}
+                       <input type="submit" name="submit" value="15:00">
+                    {% endif %}
+                </form>
+              {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="iletisim">
+      <div class="harita">
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d393.7886143234118!2d32.47268211372629!3d37.853061726011354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d083d7ac43a40d%3A0xa09e4ec071e63069!2sDo%C3%A7.%20Dr.%20Fatih%20Kayhan.%20Psikiyatrist-Psikoterapist!5e0!3m2!1str!2sde!4v1650658395600!5m2!1str!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="bilgiler">
+        <h3> Iletisim :</h3>
+
+        <p><strong>Online Terapi Saatleri:</strong> 18:00 – 20:00 (Pazar Günleri Hariç)</p>
+        <p><strong>info@drfatihkayhan.com</strong></p>
+        <p style="text-align: left;"><strong>Telefon</strong>: 05465324256</p>
+        <p><strong>Adres:</strong> Yenişehir mahallesi Peri sk. Enn-Meram Office No:2/208 Meram Konya  </p>
+    </div>
+</body>
+</html>
