@@ -69,9 +69,9 @@ class Rest(Resource):
 
 api.add_resource(Rest,'/rest')
 
-@app.route("/" , methods=["POST","GET"])
+@app.route("/" )
 def rez2():
-    return "hello"
+    return {'dd':'hello'}
 
 @app.route("/rezarvasyon" , methods=["POST","GET"])
 def rez():
