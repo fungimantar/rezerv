@@ -69,6 +69,10 @@ class Rest(Resource):
 
 api.add_resource(Rest,'/rest')
 
+@app.route("/" , methods=["POST","GET"])
+def rez2():
+    return "hello"
+
 @app.route("/rezarvasyon" , methods=["POST","GET"])
 def rez():
     global sayfa_rez,buton,dat_rez
