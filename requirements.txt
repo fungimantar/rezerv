@@ -23,10 +23,6 @@ pefile==2021.9.3
 pycparser==2.21
 pyinstaller==4.10
 pyinstaller-hooks-contrib==2022.3
-PyQt5==5.15.6
-PyQt5-Qt5==5.15.2
-PyQt5-sip==12.9.0
-PyQt5Designer==5.14.1
 python-dateutil==2.8.1
 pytz==2021.1
 pywin32-ctypes==0.2.0
@@ -37,3 +33,5 @@ whichcraft==0.6.1
 zipp==3.8.0
 zope.event==4.5.0
 zope.interface==5.4.0
+flask_restful==0.3.9
+

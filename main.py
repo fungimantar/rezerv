@@ -23,7 +23,7 @@ sayfa_rez_takip=0
 
 
 def rez_tarihi_gecen_temizle():
-    with open(r'C:\Users\fungi\Desktop\rezerv\static/rez.json') as json_file:
+    with open(r'static/rez.json') as json_file:
         dat_rez = json.load(json_file)
     base = datetime.datetime.today()
     date_list = [(base + datetime.timedelta(days=x)).date() for x in range(36)]
@@ -40,7 +40,7 @@ def rez_tarihi_gecen_temizle():
         else:
             print(i)
             del dat_rez[i]
-    with open(r'C:\Users\fungi\Desktop\rezerv\static/rez.json', 'w+') as ff:
+    with open(r'static/rez.json', 'w+') as ff:
         json.dump(dat_rez, ff)
     return
 
@@ -68,7 +68,9 @@ class Rest(Resource):
 
 
 api.add_resource(Rest,'/rest')
-
+@app.route("/" )
+def rez2():
+    return 'hello'
 @app.route("/rezarvasyon" , methods=["POST","GET"])
 def rez():
     global sayfa_rez,buton,dat_rez
@@ -81,7 +83,7 @@ def rez():
     date_list = [(base +datetime.timedelta(days=x)).date() for x in range(36)]
 
 
-    locale.setlocale(locale.LC_TIME, "tr_TR")
+    #locale.setlocale(locale.LC_TIME, "tr_TR")
     date_list_name=[(i.strftime("%A")) for i in date_list]
     if request.method == "POST" :
         btns=(request.form.get("submit",""))
@@ -129,4 +131,4 @@ def rez_kayit():
 
 
 if __name__== "__main__":
-    app.run(debug=True)
+    app.run(debug=True ,host="0.0.0.0")
