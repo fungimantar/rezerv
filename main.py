@@ -70,7 +70,7 @@ class Rest(Resource):
 api.add_resource(Rest,'/rest')
 @app.route("/" )
 def rez2():
-    return 'hello'
+    return 'hello docker'
 @app.route("/rezarvasyon" , methods=["POST","GET"])
 def rez():
     global sayfa_rez,buton,dat_rez
@@ -83,7 +83,7 @@ def rez():
     date_list = [(base +datetime.timedelta(days=x)).date() for x in range(36)]
 
 
-    #locale.setlocale(locale.LC_TIME, "tr_TR")
+    locale.setlocale(locale.LC_TIME, "tr_TR")
     date_list_name=[(i.strftime("%A")) for i in date_list]
     if request.method == "POST" :
         btns=(request.form.get("submit",""))
